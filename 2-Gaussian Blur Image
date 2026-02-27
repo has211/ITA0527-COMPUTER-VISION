@@ -1,0 +1,14 @@
+import cv2
+
+# Read image
+image = cv2.imread("C:/Users/LENOVO/Downloads/spam-sentinel-main/node_modules/flatted/python/input.jpg")
+
+# Apply Gaussian Blur
+blur = cv2.GaussianBlur(image, (7, 7), 0)
+
+# Show images
+cv2.imshow("Original Image", image)
+cv2.imshow("Gaussian Blur Image", blur)
+
+cv2.waitKey(0)
+cv2.destroyAllWindows()
