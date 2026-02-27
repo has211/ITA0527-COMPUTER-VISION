@@ -1,0 +1,21 @@
+import cv2
+import numpy as np
+import matplotlib.pyplot as plt
+
+def analyze_histogram(image_path):
+    image = cv2.imread("C:/Users/LENOVO/Downloads/spam-sentinel-main/node_modules/flatted/python/input.jpg")
+
+    colors = ('b', 'g', 'r')
+
+    for i, color in enumerate(colors):
+        hist = cv2.calcHist([image], [i], None, [256], [0, 256])
+        plt.plot(hist, color=color)
+        plt.xlim([0, 256])
+
+    plt.title("Color Histogram")
+    plt.xlabel("Pixel Intensity")
+    plt.ylabel("Frequency")
+    plt.show()
+
+# Call function
+analyze_histogram("input.jpg")
