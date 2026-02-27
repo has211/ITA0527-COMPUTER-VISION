@@ -1,0 +1,18 @@
+
+import cv2
+
+# Read image
+image = cv2.imread("C:/Users/LENOVO/Downloads/spam-sentinel-main/node_modules/flatted/python/input.jpg")
+
+# Convert to grayscale (Canny works better on gray image)
+gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+
+# Apply Canny Edge Detection
+edges = cv2.Canny(gray, 100, 200)
+
+# Show images
+cv2.imshow("Original Image", image)
+cv2.imshow("Canny Edges", edges)
+
+cv2.waitKey(0)
+cv2.destroyAllWindows()
