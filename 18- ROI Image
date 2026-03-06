@@ -1,0 +1,14 @@
+import cv2
+
+image = cv2.imread("input.jpg")
+
+# Select region of interest
+roi = image[100:300, 100:300]
+
+# Paste ROI in another location
+image[350:550, 350:550] = roi
+
+cv2.imshow("ROI Image", image)
+
+cv2.waitKey(0)
+cv2.destroyAllWindows()
